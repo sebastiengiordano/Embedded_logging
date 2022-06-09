@@ -1,0 +1,6 @@
+[submodule "thirds/cpputest"]
+	path = thirds/cpputest
+	url = https://github.com/cpputest/cpputest.git
+[submodule "thirds/plog"]
+	path = thirds/plog
+	url = https://github.com/SergiusTheBest/plog.git
