@@ -1,5 +1,6 @@
 @echo off
 cd %CD%
 call cls
-call .\build\tests\SuiteTestFramework\SuiteTest_ut.exe -v
+Rem call .\build\tests\SuiteTestFramework\SuiteTest_ut.exe -v
+call .\build\tests\libs\assertion\LibsTest-Assertion_ut.exe -v
 cmd \k
