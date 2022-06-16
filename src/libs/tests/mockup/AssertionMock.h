@@ -3,10 +3,10 @@
 class AssertionMock : public Assertion {
 
     protected:
-		void _host_abord() {
+		virtual void _host_abord() override final {
             mock().actualCall("_host_abord").onObject(this);
         }
-		void _device_abord() {
+		virtual void _device_abord() override final {
             mock().actualCall("_device_abord").onObject(this);
         }
 };

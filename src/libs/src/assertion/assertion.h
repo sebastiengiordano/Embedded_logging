@@ -90,9 +90,7 @@
 class Assertion {
 	public:
 		Assertion();
-		~Assertion() {
-
-		}
+		~Assertion();
 
 		typedef enum {
 			Host,
@@ -111,8 +109,8 @@ class Assertion {
 
 
 	protected:
-		void _host_abord();
-		void _device_abord();
+		virtual void _host_abord();
+		virtual void _device_abord();
 
 
 	private:
