@@ -74,6 +74,7 @@ project(firmware VERSION 1.0 LANGUAGES C CXX ASM)
 # set($ENV{IDF_PATH} ${PROJECT_SOURCE_DIR}/thirds/esp-idf)
 # include(${PROJECT_SOURCE_DIR}/thirds/esp-idf/tools/cmake/project.cmake)
 add_subdirectory(${PROJECT_SOURCE_DIR}/thirds/plog)
+add_compile_definitions(_GNU_SOURCE)
 # link_libraries(esp-idf)
 
 set(CMAKE_CXX_STANDARD 17)
