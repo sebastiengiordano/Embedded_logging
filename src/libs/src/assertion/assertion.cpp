@@ -29,6 +29,11 @@ void Assertion::set_target_type(TargetType target_type) {
     _target_type = target_type;
 }
 
+void Assertion::set_logger(plog::Severity severity, Assertion::AppenderType appender) {
+    _set_appender(appender);
+    _log_severity = severity;
+}
+
 
 /******************/
 /* Private Method */
@@ -56,4 +61,29 @@ bool Assertion::_is_test_in_progress(AssertionInformation& assert_info) {
         return true;
     }
     return false;
+}
+
+void Assertion::_set_appender(Assertion::AppenderType appender) {
+    switch (appender)
+    {
+        case Assertion::AppenderType::ConsoleAppender:
+            _appender = new plog::ConsoleAppender<plog::TxtFormatter>;
+            break;
+
+        case Assertion::AppenderType::ColorConsoleAppender:
+            _appender = new plog::ColorConsoleAppender<plog::TxtFormatter>;
+            break;
+        
+        default:
+            while (1);
+    }
+}
+
+void Assertion::_logging(const char* message) {
+    if (!_appender)
+    {
+        plog::init(_log_severity, _appender);
+        // plog::PLOG(_log_severity) << message;
+        plog::PLOG_FATAL << message;
+    }
 }
