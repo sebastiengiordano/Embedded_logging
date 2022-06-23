@@ -10,7 +10,7 @@
 #include "plog/Severity.h"
 // #include "logging/logging.h"
 
-#include <string.h>
+#define ASSERT_INFO(msg) {msg, __FILE__, __LINE__}
 
 #define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
 

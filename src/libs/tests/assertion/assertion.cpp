@@ -1,5 +1,4 @@
 #include "CppUTest/TestHarness.h"
-// #include "CppUTest/TestHarness_c.h"
 #include "CppUTestExt/MockSupport.h"
 #include "mockup/AssertionMock.h"
 
@@ -21,7 +20,7 @@ TEST_GROUP(Assertion) {
 
 TEST(Assertion, assertion_failed_during_test) {
     
-    // // Init test.
+    // Init test.
     assertion->set_target_type(Assertion::TargetType::Host);
     assertion->set_test_behavior();
     assertion->check(false, ASSERT_INFO("Assertion failed during test."));
@@ -29,7 +28,7 @@ TEST(Assertion, assertion_failed_during_test) {
 
 TEST(Assertion, assertion_failed_on_host) {
     
-    // // Init test.
+    // Init test.
     assertion->set_target_type(Assertion::TargetType::Host);
     mock().expectOneCall("_host_abord").onObject(assertion);
     assertion->check(false, ASSERT_INFO("Assertion failed on host."));
@@ -37,7 +36,7 @@ TEST(Assertion, assertion_failed_on_host) {
 
 TEST(Assertion, assertion_failed_on_device) {
     
-    // // Init test.
+    // Init test.
     assertion->set_target_type(Assertion::TargetType::Device);
     mock().expectOneCall("_device_abord").onObject(assertion);
     assertion->check(false, ASSERT_INFO("Assertion failed on device."));
