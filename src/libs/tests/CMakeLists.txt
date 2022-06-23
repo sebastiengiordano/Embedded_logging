@@ -6,4 +6,5 @@ set(LIBS_SOURCES_DIR ${LIBS_DIR}/src)
 set(LIBS_TESTS_DIR ${LIBS_DIR}/tests)
 
 add_subdirectory(${LIBS_TESTS_DIR}/assertion ${CMAKE_BINARY_DIR}/tests/libs/assertion)
+add_subdirectory(${LIBS_TESTS_DIR}/assertion-disabled ${CMAKE_BINARY_DIR}/tests/libs/assertion-disabled)
 # add_subdirectory(${LIBS_TESTS_DIR}/logging ${CMAKE_BINARY_DIR}/tests/libs/logging)
