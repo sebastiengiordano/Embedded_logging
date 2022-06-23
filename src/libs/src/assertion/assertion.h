@@ -5,7 +5,7 @@
 #define ASSERT_INFO(msg) {msg, __FILE__, __LINE__}
 
 #if defined (ASSERT_DISABLED)
-	#define CHECK_ASSERT(expression, assert_info) check(true, assert_info)
+	#define CHECK_ASSERT(expression, assert_info) check(true, {"", "", 0})
 #else
 	#define CHECK_ASSERT check
 #endif
