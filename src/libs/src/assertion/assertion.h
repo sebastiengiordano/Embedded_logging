@@ -34,6 +34,7 @@ class Assertion {
 	protected:
 		virtual void _host_abord();
 		virtual void _device_abord();
+		virtual void _log(const char* message);
 
 
 	private:
